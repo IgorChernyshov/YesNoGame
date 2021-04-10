@@ -29,7 +29,7 @@ final class StoryFactory {
 			storiesProduced += 1
 			self.document = nil
 		}
-		return .init(id: String(storiesProduced), completed: false, preview: preview, body: body, stats: stats)
+		return .init(id: String(storiesProduced), preview: preview, body: body, stats: stats)
 	}
 
 	// MARK: - Submodels production.

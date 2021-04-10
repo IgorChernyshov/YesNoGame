@@ -6,16 +6,12 @@
 //
 
 import Foundation
-import FirebaseDatabase
 
 /// A model for Yes-No Story.
-struct Story {
+struct Story: Codable {
 
 	/// Story ID.
 	let id: String?
-
-	/// Did user complete the story.
-	let isCompleted: Bool
 
 	/// Data for preview.
 	let preview: Preview
@@ -31,19 +27,19 @@ struct Story {
 extension Story {
 
 	/// Data for preview.
-	struct Preview {
+	struct Preview: Codable {
 		let title: String
 		let imageURL: String
 	}
 
 	/// Data for detailed view.
-	struct Body {
+	struct Body: Codable {
 		let question: String
 		let answer: String
 	}
 
 	/// Story stats.
-	struct Stats {
+	struct Stats: Codable {
 		let rating: UInt
 		let difficulty: UInt
 		let timeTaken: UInt
@@ -63,7 +59,6 @@ extension Story.Stats {
 extension Story {
 	static var demoStory: Story = {
 		Story(id: "TestStoryID",
-			  completed: false,
 			  preview: Preview(title: "Человек со спичкой", imageURL: "sources/some.png"),
 			  body: Body(question: "Голый человек был найден мертвым посреди поля. В его руке была сгоревшая спичка. Что произошло и как он сюда попал?",
 						 answer: "Человек летел вместе со своим другом на воздушном шаре. Воздушный шар начал падать и чтобы сделать его легче, они выкинули все вещи, в том числе всю свою одежду. Этого было недостаточно и они решили, что один из них должен прыгнуть для спасения другого. Они договорились тянуть спичку: кому выпадет сгоревшая спичка, тому придется прыгать. Этому человеку попалась сгоревшая спичка и он прыгнул, как они и договаривались."),

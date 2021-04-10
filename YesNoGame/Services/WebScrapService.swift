@@ -12,11 +12,13 @@ final class WebScrapService {
 	
 	private let apiFactory: APIFactory
 	private let storyFactory: StoryFactory
+	private let storyRepository: StoryRepository
 	private let isDemoMode: Bool
 
-	init(apiFactory: APIFactory, storyFactory: StoryFactory, isDemoMode: Bool = false) {
+	init(apiFactory: APIFactory, storyFactory: StoryFactory, storyRepository: StoryRepository, isDemoMode: Bool = false) {
 		self.apiFactory = apiFactory
 		self.storyFactory = storyFactory
+		self.storyRepository = storyRepository
 		self.isDemoMode = isDemoMode
 	}
 	
@@ -31,6 +33,9 @@ final class WebScrapService {
 			guard let data = data, let parsedString = String(data: data, encoding: .utf8) else { return }
 			let document = try? SwiftSoup.parseBodyFragment(parsedString)
 			let story = self.storyFactory.makeStory(from: document)
+			if let story = story {
+				self.storyRepository.addStory(story)
+			}
 			completion(story)
 		}
 		task.resume()

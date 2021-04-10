@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct MainView: View {
 
@@ -14,6 +15,7 @@ struct MainView: View {
 
 	let service = WebScrapService(apiFactory: APIFactory(),
 								  storyFactory: StoryFactory(),
+								  storyRepository: FirestoreStoryRepository(database: Firestore.firestore()),
 								  isDemoMode: false)
 
 	init() {

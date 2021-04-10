@@ -12,7 +12,8 @@
 		D6A8C7862619954E00C6089C /* StoryDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A8C7852619954E00C6089C /* StoryDetailsScreen.swift */; };
 		D6A8C78A261996AD00C6089C /* StoryStatsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A8C789261996AD00C6089C /* StoryStatsStack.swift */; };
 		D6DF3D7426216BC900E7A7F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6DF3D7326216BC900E7A7F5 /* GoogleService-Info.plist */; };
-		D6DF3D7826216F4500E7A7F5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D6DF3D7726216F4500E7A7F5 /* FirebaseDatabase */; };
+		D6DF3D912622012300E7A7F5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D6DF3D902622012300E7A7F5 /* FirebaseFirestore */; };
+		D6DF3D932622012300E7A7F5 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = D6DF3D922622012300E7A7F5 /* FirebaseFirestoreSwift-Beta */; };
 		D6ECC6B226183AAF005E08CC /* YesNoGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECC6B126183AAF005E08CC /* YesNoGameApp.swift */; };
 		D6ECC6B426183AAF005E08CC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECC6B326183AAF005E08CC /* MainView.swift */; };
 		D6ECC6B626183AAF005E08CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6ECC6B526183AAF005E08CC /* Assets.xcassets */; };
@@ -47,8 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6DF3D7826216F4500E7A7F5 /* FirebaseDatabase in Frameworks */,
+				D6DF3D932622012300E7A7F5 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				D6ECC6CD261854F7005E08CC /* SwiftSoup in Frameworks */,
+				D6DF3D912622012300E7A7F5 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +160,8 @@
 			name = YesNoGame;
 			packageProductDependencies = (
 				D6ECC6CC261854F7005E08CC /* SwiftSoup */,
-				D6DF3D7726216F4500E7A7F5 /* FirebaseDatabase */,
+				D6DF3D902622012300E7A7F5 /* FirebaseFirestore */,
+				D6DF3D922622012300E7A7F5 /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = YesNoGame;
 			productReference = D6ECC6AE26183AAF005E08CC /* YesNoGame.app */;
@@ -189,7 +192,7 @@
 			mainGroup = D6ECC6A526183AAF005E08CC;
 			packageReferences = (
 				D6ECC6CB261854F7005E08CC /* XCRemoteSwiftPackageReference "SwiftSoup" */,
-				D6DF3D7626216F4500E7A7F5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D6DF3D8F2622012300E7A7F5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D6ECC6AF26183AAF005E08CC /* Products */;
 			projectDirPath = "";
@@ -418,7 +421,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D6DF3D7626216F4500E7A7F5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		D6DF3D8F2622012300E7A7F5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -437,10 +440,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D6DF3D7726216F4500E7A7F5 /* FirebaseDatabase */ = {
+		D6DF3D902622012300E7A7F5 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D6DF3D7626216F4500E7A7F5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
+			package = D6DF3D8F2622012300E7A7F5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		D6DF3D922622012300E7A7F5 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6DF3D8F2622012300E7A7F5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
 		};
 		D6ECC6CC261854F7005E08CC /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;

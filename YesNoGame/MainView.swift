@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
 
 	@State private var story: Story?
 	@State private var storyNumber: String = "1"
@@ -45,8 +45,8 @@ struct ContentView: View {
 	}
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView()
+		MainView()
 	}
 }

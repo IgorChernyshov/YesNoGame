@@ -51,9 +51,9 @@ extension Story.Stats {
 	var timeTakenText: String { "\(timeTaken) минут" }
 }
 
+#if DEBUG
 // MARK: - Demo mode data
 extension Story {
-	
 	static var demoStory: Story = {
 		Story(preview: Preview(title: "Человек со спичкой", imageURL: "sources/some.png"),
 			  body: Body(question: "Голый человек был найден мертвым посреди поля. В его руке была сгоревшая спичка. Что произошло и как он сюда попал?",
@@ -61,3 +61,4 @@ extension Story {
 			  stats: Stats(rating: 77, difficulty: 7, timeTaken: 18))
 	}()
 }
+#endif

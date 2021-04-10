@@ -11,8 +11,10 @@
 		D6A8C782261987D300C6089C /* StoryBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A8C781261987D300C6089C /* StoryBackgroundView.swift */; };
 		D6A8C7862619954E00C6089C /* StoryDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A8C7852619954E00C6089C /* StoryDetailsScreen.swift */; };
 		D6A8C78A261996AD00C6089C /* StoryStatsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A8C789261996AD00C6089C /* StoryStatsStack.swift */; };
+		D6DF3D7426216BC900E7A7F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6DF3D7326216BC900E7A7F5 /* GoogleService-Info.plist */; };
+		D6DF3D7826216F4500E7A7F5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D6DF3D7726216F4500E7A7F5 /* FirebaseDatabase */; };
 		D6ECC6B226183AAF005E08CC /* YesNoGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECC6B126183AAF005E08CC /* YesNoGameApp.swift */; };
-		D6ECC6B426183AAF005E08CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECC6B326183AAF005E08CC /* ContentView.swift */; };
+		D6ECC6B426183AAF005E08CC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECC6B326183AAF005E08CC /* MainView.swift */; };
 		D6ECC6B626183AAF005E08CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6ECC6B526183AAF005E08CC /* Assets.xcassets */; };
 		D6ECC6B926183AB0005E08CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6ECC6B826183AB0005E08CC /* Preview Assets.xcassets */; };
 		D6ECC6C826183E23005E08CC /* WebScrapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECC6C726183E23005E08CC /* WebScrapService.swift */; };
@@ -27,9 +29,10 @@
 		D6A8C781261987D300C6089C /* StoryBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBackgroundView.swift; sourceTree = "<group>"; };
 		D6A8C7852619954E00C6089C /* StoryDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailsScreen.swift; sourceTree = "<group>"; };
 		D6A8C789261996AD00C6089C /* StoryStatsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryStatsStack.swift; sourceTree = "<group>"; };
+		D6DF3D7326216BC900E7A7F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D6ECC6AE26183AAF005E08CC /* YesNoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YesNoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6ECC6B126183AAF005E08CC /* YesNoGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesNoGameApp.swift; sourceTree = "<group>"; };
-		D6ECC6B326183AAF005E08CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D6ECC6B326183AAF005E08CC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D6ECC6B526183AAF005E08CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6ECC6B826183AB0005E08CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D6ECC6BA26183AB0005E08CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6DF3D7826216F4500E7A7F5 /* FirebaseDatabase in Frameworks */,
 				D6ECC6CD261854F7005E08CC /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +64,16 @@
 				D6A8C789261996AD00C6089C /* StoryStatsStack.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D6DF3D7226216B8E00E7A7F5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D6ECC6B526183AAF005E08CC /* Assets.xcassets */,
+				D6DF3D7326216BC900E7A7F5 /* GoogleService-Info.plist */,
+				D6ECC6BA26183AB0005E08CC /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D6ECC6A526183AAF005E08CC = {
@@ -81,14 +95,13 @@
 		D6ECC6B026183AAF005E08CC /* YesNoGame */ = {
 			isa = PBXGroup;
 			children = (
+				D6ECC6B126183AAF005E08CC /* YesNoGameApp.swift */,
 				D6A8C77D261879FC00C6089C /* Views */,
 				D6ECC6DA2618652B005E08CC /* Factories */,
 				D6ECC6C626183E0F005E08CC /* Services */,
 				D6ECC6C226183B43005E08CC /* Models */,
-				D6ECC6B126183AAF005E08CC /* YesNoGameApp.swift */,
-				D6ECC6B326183AAF005E08CC /* ContentView.swift */,
-				D6ECC6B526183AAF005E08CC /* Assets.xcassets */,
-				D6ECC6BA26183AB0005E08CC /* Info.plist */,
+				D6ECC6B326183AAF005E08CC /* MainView.swift */,
+				D6DF3D7226216B8E00E7A7F5 /* Resources */,
 				D6ECC6B726183AB0005E08CC /* Preview Content */,
 			);
 			path = YesNoGame;
@@ -145,6 +158,7 @@
 			name = YesNoGame;
 			packageProductDependencies = (
 				D6ECC6CC261854F7005E08CC /* SwiftSoup */,
+				D6DF3D7726216F4500E7A7F5 /* FirebaseDatabase */,
 			);
 			productName = YesNoGame;
 			productReference = D6ECC6AE26183AAF005E08CC /* YesNoGame.app */;
@@ -175,6 +189,7 @@
 			mainGroup = D6ECC6A526183AAF005E08CC;
 			packageReferences = (
 				D6ECC6CB261854F7005E08CC /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				D6DF3D7626216F4500E7A7F5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D6ECC6AF26183AAF005E08CC /* Products */;
 			projectDirPath = "";
@@ -192,6 +207,7 @@
 			files = (
 				D6ECC6B926183AB0005E08CC /* Preview Assets.xcassets in Resources */,
 				D6ECC6B626183AAF005E08CC /* Assets.xcassets in Resources */,
+				D6DF3D7426216BC900E7A7F5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +224,7 @@
 				D6ECC6C826183E23005E08CC /* WebScrapService.swift in Sources */,
 				D6ECC6D3261864E9005E08CC /* StoryFactory.swift in Sources */,
 				D6ECC6D026186002005E08CC /* Story.swift in Sources */,
-				D6ECC6B426183AAF005E08CC /* ContentView.swift in Sources */,
+				D6ECC6B426183AAF005E08CC /* MainView.swift in Sources */,
 				D6ECC6B226183AAF005E08CC /* YesNoGameApp.swift in Sources */,
 				D6A8C7862619954E00C6089C /* StoryDetailsScreen.swift in Sources */,
 				D6ECC6DD2618733E005E08CC /* APIFactory.swift in Sources */,
@@ -343,7 +359,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"YesNoGame/Preview Content\"";
 				DEVELOPMENT_TEAM = 73YFFUD89Y;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = YesNoGame/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/YesNoGame/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -365,7 +381,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"YesNoGame/Preview Content\"";
 				DEVELOPMENT_TEAM = 73YFFUD89Y;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = YesNoGame/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/YesNoGame/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -402,6 +418,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D6DF3D7626216F4500E7A7F5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
 		D6ECC6CB261854F7005E08CC /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
@@ -413,6 +437,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D6DF3D7726216F4500E7A7F5 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6DF3D7626216F4500E7A7F5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		D6ECC6CC261854F7005E08CC /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D6ECC6CB261854F7005E08CC /* XCRemoteSwiftPackageReference "SwiftSoup" */;

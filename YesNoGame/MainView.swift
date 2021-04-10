@@ -12,7 +12,9 @@ struct MainView: View {
 	@State private var story: Story?
 	@State private var storyNumber: String = "1"
 
-	let service = WebScrapService(apiFactory: APIFactory(), isDemoMode: false)
+	let service = WebScrapService(apiFactory: APIFactory(),
+								  storyFactory: StoryFactory(),
+								  isDemoMode: false)
 
 	init() {
 		UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -26,11 +28,9 @@ struct MainView: View {
 		NavigationView {
 			VStack {
 				if let story = story {
-					NavigationLink(
-						destination: StoryDetailsScreen(story: story),
-						label: {
+					NavigationLink(destination: StoryDetailsScreen(story: story)) {
 							StoryPreviewCell(story: story)
-						})
+						}
 				}
 				HStack(alignment: .center, spacing: 16) {
 					Button("Get story") {

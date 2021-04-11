@@ -9,7 +9,7 @@ import Foundation
 import SwiftSoup
 
 final class WebScrapService {
-	
+
 	private let apiFactory: APIFactory
 	private let storyFactory: StoryFactory
 	private let storyRepository: StoryRepository
@@ -21,7 +21,7 @@ final class WebScrapService {
 		self.storyRepository = storyRepository
 		self.isDemoMode = isDemoMode
 	}
-	
+
 	func getStoryData(storyNumber: String, completion: @escaping (Story?) -> ()) {
 		guard !isDemoMode else {
 			completion(Story.demoStory)
@@ -40,4 +40,20 @@ final class WebScrapService {
 		}
 		task.resume()
 	}
+
+	#if DEBUG
+	// MARK: - 🏴‍☠️
+	private var timer: Timer?
+	private var lastStoryNumber: UInt = 0
+
+	func scrapAllStories() {
+		timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(scrapStory), userInfo: nil, repeats: true)
+	}
+
+	@objc private func scrapStory() {
+		getStoryData(storyNumber: lastStoryNumber.description) { _ in }
+		lastStoryNumber += 1
+		if lastStoryNumber > 2000 { timer?.invalidate() }
+	}
+	#endif
 }

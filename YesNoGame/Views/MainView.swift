@@ -42,6 +42,9 @@ struct MainView: View {
 					}
 					TextField("Story number", text: $storyNumber)
 				}.padding()
+				Button("🏴‍☠️ Scrap all stories 🏴‍☠️") {
+					service.scrapAllStories()
+				}
 			}.navigationBarTitle("Выберите историю", displayMode: .inline)
 		}
 	}

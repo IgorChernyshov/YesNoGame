@@ -9,24 +9,24 @@ import SwiftUI
 
 struct StoryPreviewCell: View {
 
-	let story: Story
+	let viewModel: StoryPreviewCellViewModel
 
 	var body: some View {
 		VStack(alignment: .leading, spacing: 4) {
-			Text(story.preview.title)
+			Text(viewModel.title)
 				.font(.headline)
-			Text(story.body.question)
+			Text(viewModel.question)
 				.font(.footnote)
 				.lineLimit(2)
-			StoryStatsStack(story: story)
+			StoryStatsStack(storyStats: viewModel.storyStats)
 		}.padding()
 		.foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-		.background(StoryBackgroundView(storyDifficulty: story.stats.difficulty))
+		.background(StoryBackgroundView(storyDifficulty: viewModel.storyDifficulty))
 	}
 }
 
 struct StoryPreviewCell_Previews: PreviewProvider {
 	static var previews: some View {
-		StoryPreviewCell(story: Story.demoStory)
+		StoryPreviewCell(viewModel: StoryPreviewCellViewModel(story: Story.demoStory))
 	}
 }

@@ -17,7 +17,7 @@ struct StoryDetailsScreen: View {
 		ZStack {
 			StoryBackgroundView(storyDifficulty: story.stats.difficulty)
 			VStack(spacing: 16) {
-				StoryStatsStack(story: story)
+				StoryStatsStack(storyStats: story.stats)
 				Spacer()
 				VStack(alignment: .leading, spacing: 8) {
 					Text(story.preview.title)

@@ -10,15 +10,10 @@ import FirebaseFirestore
 
 struct MainView: View {
 
-	@State private var story: Story?
-	@State private var storyNumber: String = "1"
+	@ObservedObject private var storiesListViewModel: StoriesListViewModel
 
-	let service = WebScrapService(apiFactory: APIFactory(),
-								  storyFactory: StoryFactory(),
-								  storyRepository: FirestoreStoryRepository(database: Firestore.firestore()),
-								  isDemoMode: false)
-
-	init() {
+	init(storiesListViewModel: StoriesListViewModel) {
+		self.storiesListViewModel = storiesListViewModel
 		UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 		UINavigationBar.appearance().shadowImage = UIImage()
 		UINavigationBar.appearance().isTranslucent = true
@@ -28,30 +23,14 @@ struct MainView: View {
 
 	var body: some View {
 		NavigationView {
-			VStack {
-				if let story = story {
-					NavigationLink(destination: StoryDetailsScreen(story: story)) {
-							StoryPreviewCell(story: story)
-						}
-				}
-				HStack(alignment: .center, spacing: 16) {
-					Button("Get story") {
-						service.getStoryData(storyNumber: storyNumber) { story in
-							self.story = story
-						}
-					}
-					TextField("Story number", text: $storyNumber)
-				}.padding()
-				Button("🏴‍☠️ Scrap all stories 🏴‍☠️") {
-					service.scrapAllStories()
-				}
-			}.navigationBarTitle("Выберите историю", displayMode: .inline)
+			StoriesListView(viewModel: storiesListViewModel)
+				.navigationBarTitle("Выберите историю", displayMode: .inline)
 		}
 	}
 }
 
 struct MainView_Previews: PreviewProvider {
 	static var previews: some View {
-		MainView()
+		MainView(storiesListViewModel: StoriesListViewModel(storiesRepository: PreviewStoryRepository()))
 	}
 }

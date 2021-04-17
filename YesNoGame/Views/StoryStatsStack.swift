@@ -9,24 +9,24 @@ import SwiftUI
 
 struct StoryStatsStack: View {
 
-	let story: Story
+	let storyStats: Story.Stats
 
     var body: some View {
 		HStack {
 			Image(systemName: "hand.thumbsup")
-			Text(story.stats.ratingText)
+			Text(storyStats.ratingText)
 			Spacer()
 			Image(systemName: "puzzlepiece")
-			Text(story.stats.difficultyText)
+			Text(storyStats.difficultyText)
 			Spacer()
 			Image(systemName: "stopwatch")
-			Text(story.stats.timeTakenText)
+			Text(storyStats.timeTakenText)
 		}
     }
 }
 
 struct StoryStatsStack_Previews: PreviewProvider {
     static var previews: some View {
-		StoryStatsStack(story: Story.demoStory)
+		StoryStatsStack(storyStats: Story.demoStory.stats)
     }
 }

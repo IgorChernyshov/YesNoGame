@@ -15,6 +15,11 @@
 		D6DF3D912622012300E7A7F5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D6DF3D902622012300E7A7F5 /* FirebaseFirestore */; };
 		D6DF3D932622012300E7A7F5 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = D6DF3D922622012300E7A7F5 /* FirebaseFirestoreSwift-Beta */; };
 		D6DF3D982622025900E7A7F5 /* StoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF3D972622025900E7A7F5 /* StoryRepository.swift */; };
+		D6DF3D9E2623184E00E7A7F5 /* StoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF3D9D2623184E00E7A7F5 /* StoriesListView.swift */; };
+		D6DF3DA3262318BA00E7A7F5 /* StoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF3DA2262318BA00E7A7F5 /* StoriesListViewModel.swift */; };
+		D6DF3DB026234E3C00E7A7F5 /* FirestoreStoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF3DAF26234E3C00E7A7F5 /* FirestoreStoryRepository.swift */; };
+		D6DF3DB52624150E00E7A7F5 /* StoryPreviewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF3DB42624150E00E7A7F5 /* StoryPreviewCellViewModel.swift */; };
+		D6DF3DBC26256D3A00E7A7F5 /* PreviewStoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF3DBB26256D3A00E7A7F5 /* PreviewStoryRepository.swift */; };
 		D6ECC6B226183AAF005E08CC /* YesNoGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECC6B126183AAF005E08CC /* YesNoGameApp.swift */; };
 		D6ECC6B426183AAF005E08CC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECC6B326183AAF005E08CC /* MainView.swift */; };
 		D6ECC6B626183AAF005E08CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6ECC6B526183AAF005E08CC /* Assets.xcassets */; };
@@ -33,6 +38,11 @@
 		D6A8C789261996AD00C6089C /* StoryStatsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryStatsStack.swift; sourceTree = "<group>"; };
 		D6DF3D7326216BC900E7A7F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D6DF3D972622025900E7A7F5 /* StoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryRepository.swift; sourceTree = "<group>"; };
+		D6DF3D9D2623184E00E7A7F5 /* StoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesListView.swift; sourceTree = "<group>"; };
+		D6DF3DA2262318BA00E7A7F5 /* StoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesListViewModel.swift; sourceTree = "<group>"; };
+		D6DF3DAF26234E3C00E7A7F5 /* FirestoreStoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreStoryRepository.swift; sourceTree = "<group>"; };
+		D6DF3DB42624150E00E7A7F5 /* StoryPreviewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPreviewCellViewModel.swift; sourceTree = "<group>"; };
+		D6DF3DBB26256D3A00E7A7F5 /* PreviewStoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewStoryRepository.swift; sourceTree = "<group>"; };
 		D6ECC6AE26183AAF005E08CC /* YesNoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YesNoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6ECC6B126183AAF005E08CC /* YesNoGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesNoGameApp.swift; sourceTree = "<group>"; };
 		D6ECC6B326183AAF005E08CC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -62,11 +72,12 @@
 		D6A8C77D261879FC00C6089C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D6ECC6B326183AAF005E08CC /* MainView.swift */,
+				D6DF3D9D2623184E00E7A7F5 /* StoriesListView.swift */,
 				D6A8C781261987D300C6089C /* StoryBackgroundView.swift */,
 				D6A8C7852619954E00C6089C /* StoryDetailsScreen.swift */,
 				D6A8C77E26187A0F00C6089C /* StoryPreviewCell.swift */,
 				D6A8C789261996AD00C6089C /* StoryStatsStack.swift */,
-				D6ECC6B326183AAF005E08CC /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -85,14 +96,33 @@
 			isa = PBXGroup;
 			children = (
 				D6DF3D972622025900E7A7F5 /* StoryRepository.swift */,
+				D6DF3DAF26234E3C00E7A7F5 /* FirestoreStoryRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D6DF3DA12623189E00E7A7F5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D6DF3DA2262318BA00E7A7F5 /* StoriesListViewModel.swift */,
+				D6DF3DB42624150E00E7A7F5 /* StoryPreviewCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D6DF3DAE26234CCA00E7A7F5 /* Web Scrap */ = {
+			isa = PBXGroup;
+			children = (
+				D6ECC6C726183E23005E08CC /* WebScrapService.swift */,
+			);
+			path = "Web Scrap";
 			sourceTree = "<group>";
 		};
 		D6ECC6A526183AAF005E08CC = {
 			isa = PBXGroup;
 			children = (
 				D6ECC6B026183AAF005E08CC /* YesNoGame */,
+				D6DF3DA12623189E00E7A7F5 /* ViewModels */,
 				D6ECC6AF26183AAF005E08CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				D6ECC6B826183AB0005E08CC /* Preview Assets.xcassets */,
+				D6DF3DBB26256D3A00E7A7F5 /* PreviewStoryRepository.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -139,7 +170,7 @@
 		D6ECC6C626183E0F005E08CC /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D6ECC6C726183E23005E08CC /* WebScrapService.swift */,
+				D6DF3DAE26234CCA00E7A7F5 /* Web Scrap */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -240,9 +271,14 @@
 				D6ECC6D026186002005E08CC /* Story.swift in Sources */,
 				D6ECC6B426183AAF005E08CC /* MainView.swift in Sources */,
 				D6ECC6B226183AAF005E08CC /* YesNoGameApp.swift in Sources */,
+				D6DF3D9E2623184E00E7A7F5 /* StoriesListView.swift in Sources */,
 				D6A8C7862619954E00C6089C /* StoryDetailsScreen.swift in Sources */,
+				D6DF3DBC26256D3A00E7A7F5 /* PreviewStoryRepository.swift in Sources */,
 				D6DF3D982622025900E7A7F5 /* StoryRepository.swift in Sources */,
+				D6DF3DB026234E3C00E7A7F5 /* FirestoreStoryRepository.swift in Sources */,
+				D6DF3DA3262318BA00E7A7F5 /* StoriesListViewModel.swift in Sources */,
 				D6ECC6DD2618733E005E08CC /* APIFactory.swift in Sources */,
+				D6DF3DB52624150E00E7A7F5 /* StoryPreviewCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

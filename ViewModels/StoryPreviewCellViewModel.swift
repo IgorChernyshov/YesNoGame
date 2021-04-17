@@ -15,7 +15,7 @@ struct StoryPreviewCellViewModel: Identifiable {
 	var title: String { story.preview.title }
 	var question: String { story.body.question }
 	var storyStats: Story.Stats { story.stats }
-	var storyDifficulty: UInt { story.stats.difficulty }
+	var backgroundViewModel: StoryBackgroundViewModel { .init(storyDifficulty: story.stats.difficulty) }
 
 	// MARK: - Model
 	private var story: Story

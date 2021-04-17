@@ -21,7 +21,7 @@ struct StoryPreviewCell: View {
 			StoryStatsStack(storyStats: viewModel.storyStats)
 		}.padding()
 		.foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-		.background(StoryBackgroundView(storyDifficulty: viewModel.storyDifficulty))
+		.background(StoryBackgroundView(viewModel: viewModel.backgroundViewModel))
 	}
 }
 

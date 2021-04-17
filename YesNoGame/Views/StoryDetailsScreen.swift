@@ -15,7 +15,7 @@ struct StoryDetailsScreen: View {
 
 	var body: some View {
 		ZStack {
-			StoryBackgroundView(storyDifficulty: story.stats.difficulty)
+//			StoryBackgroundView(storyDifficulty: story.stats.difficulty)
 			VStack(spacing: 16) {
 				StoryStatsStack(storyStats: story.stats)
 				Spacer()

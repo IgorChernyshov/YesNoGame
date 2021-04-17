@@ -14,11 +14,6 @@ struct MainView: View {
 
 	init(storiesListViewModel: StoriesListViewModel) {
 		self.storiesListViewModel = storiesListViewModel
-		UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-		UINavigationBar.appearance().shadowImage = UIImage()
-		UINavigationBar.appearance().isTranslucent = true
-		UINavigationBar.appearance().tintColor = .white
-		UINavigationBar.appearance().backgroundColor = .clear
 	}
 
 	var body: some View {

@@ -13,9 +13,9 @@ struct StoriesListView: View {
 
 	var body: some View {
 		List {
-			ForEach(viewModel.previewCellViewModels) { storyPreviewViewModel in
-				NavigationLink(destination: Text("Story Details View")) {
-					StoryPreviewCell(viewModel: storyPreviewViewModel)
+			ForEach(viewModel.previewCellViewModels) { viewModel in
+				NavigationLink(destination: StoryDetailsScreen(viewModel: viewModel.detailsScreenViewModel)) {
+					StoryPreviewCell(viewModel: viewModel)
 				}.listRowInsets(EdgeInsets())
 			}
 		}

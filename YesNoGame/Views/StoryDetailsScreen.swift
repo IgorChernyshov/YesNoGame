@@ -9,22 +9,22 @@ import SwiftUI
 
 struct StoryDetailsScreen: View {
 
-	let story: Story
+	let viewModel: StoryDetailsScreenViewModel
 
 	@State private var isShowingQuestion = true
 
 	var body: some View {
 		ZStack {
-//			StoryBackgroundView(storyDifficulty: story.stats.difficulty)
+			StoryBackgroundView(viewModel: viewModel.backgroundViewModel)
 			VStack(spacing: 16) {
-				StoryStatsStack(storyStats: story.stats)
+				StoryStatsStack(storyStats: viewModel.storyStats)
 				Spacer()
 				VStack(alignment: .leading, spacing: 8) {
-					Text(story.preview.title)
+					Text(viewModel.title)
 						.font(.title)
 					ScrollView {
 						VStack {
-							Text(isShowingQuestion ? story.body.question : story.body.answer)
+							Text(isShowingQuestion ? viewModel.question : viewModel.answer)
 								.lineLimit(nil)
 						}.frame(maxWidth: .infinity)
 						.animation(.easeOut)
@@ -50,6 +50,6 @@ struct StoryDetailsScreen: View {
 
 struct StoryDetailsScreen_Previews: PreviewProvider {
 	static var previews: some View {
-		StoryDetailsScreen(story: Story.demoStory)
+		StoryDetailsScreen(viewModel: StoryDetailsScreenViewModel(story: Story.demoStory))
 	}
 }

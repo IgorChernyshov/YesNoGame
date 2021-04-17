@@ -21,6 +21,7 @@
 		D6DF3DB52624150E00E7A7F5 /* StoryPreviewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF3DB42624150E00E7A7F5 /* StoryPreviewCellViewModel.swift */; };
 		D6DF3DBC26256D3A00E7A7F5 /* PreviewStoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF3DBB26256D3A00E7A7F5 /* PreviewStoryRepository.swift */; };
 		D6DF3E76262AEE4300E7A7F5 /* StoryBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF3E75262AEE4300E7A7F5 /* StoryBackgroundViewModel.swift */; };
+		D6DF3E7A262AF60800E7A7F5 /* StoryDetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF3E79262AF60800E7A7F5 /* StoryDetailsScreenViewModel.swift */; };
 		D6ECC6B226183AAF005E08CC /* YesNoGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECC6B126183AAF005E08CC /* YesNoGameApp.swift */; };
 		D6ECC6B426183AAF005E08CC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECC6B326183AAF005E08CC /* MainView.swift */; };
 		D6ECC6B626183AAF005E08CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6ECC6B526183AAF005E08CC /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		D6DF3DB42624150E00E7A7F5 /* StoryPreviewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPreviewCellViewModel.swift; sourceTree = "<group>"; };
 		D6DF3DBB26256D3A00E7A7F5 /* PreviewStoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewStoryRepository.swift; sourceTree = "<group>"; };
 		D6DF3E75262AEE4300E7A7F5 /* StoryBackgroundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBackgroundViewModel.swift; sourceTree = "<group>"; };
+		D6DF3E79262AF60800E7A7F5 /* StoryDetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailsScreenViewModel.swift; sourceTree = "<group>"; };
 		D6ECC6AE26183AAF005E08CC /* YesNoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YesNoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6ECC6B126183AAF005E08CC /* YesNoGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesNoGameApp.swift; sourceTree = "<group>"; };
 		D6ECC6B326183AAF005E08CC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -107,8 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				D6DF3DA2262318BA00E7A7F5 /* StoriesListViewModel.swift */,
-				D6DF3DB42624150E00E7A7F5 /* StoryPreviewCellViewModel.swift */,
 				D6DF3E75262AEE4300E7A7F5 /* StoryBackgroundViewModel.swift */,
+				D6DF3E79262AF60800E7A7F5 /* StoryDetailsScreenViewModel.swift */,
+				D6DF3DB42624150E00E7A7F5 /* StoryPreviewCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				D6A8C78A261996AD00C6089C /* StoryStatsStack.swift in Sources */,
 				D6ECC6C826183E23005E08CC /* WebScrapService.swift in Sources */,
 				D6ECC6D3261864E9005E08CC /* StoryFactory.swift in Sources */,
+				D6DF3E7A262AF60800E7A7F5 /* StoryDetailsScreenViewModel.swift in Sources */,
 				D6ECC6D026186002005E08CC /* Story.swift in Sources */,
 				D6ECC6B426183AAF005E08CC /* MainView.swift in Sources */,
 				D6ECC6B226183AAF005E08CC /* YesNoGameApp.swift in Sources */,

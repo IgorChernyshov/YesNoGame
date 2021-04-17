@@ -19,8 +19,8 @@ struct MainView: View {
 	var body: some View {
 		NavigationView {
 			StoriesListView(viewModel: storiesListViewModel)
-				.navigationBarTitle("Выберите историю", displayMode: .inline)
-		}
+				.navigationBarTitle("Данетки", displayMode: .inline)
+		}.accentColor(.primary)
 	}
 }
 

@@ -24,6 +24,8 @@ struct StoriesListView: View {
 
 struct StoriesListView_Previews: PreviewProvider {
 	static var previews: some View {
-		StoriesListView(viewModel: StoriesListViewModel(storiesRepository: PreviewStoryRepository()))
+		let storiesRepository = PreviewStoryRepository()
+		storiesRepository.getStories()
+		return StoriesListView(viewModel: StoriesListViewModel(storiesRepository: storiesRepository))
 	}
 }

@@ -50,6 +50,6 @@ struct StoryDetailsScreen: View {
 
 struct StoryDetailsScreen_Previews: PreviewProvider {
 	static var previews: some View {
-		StoryDetailsScreen(viewModel: StoryDetailsScreenViewModel(story: Story.demoStory))
+		StoryDetailsScreen(viewModel: StoryDetailsScreenViewModel(story: Story.demoStories.first!))
 	}
 }

@@ -7,20 +7,14 @@
 
 import Foundation
 
-final class PreviewStoryRepository: BaseStoryRepository {
-
-	override init() {
-		super.init()
-		self.getStories(storiesPerRequest: 10)
-	}
-}
+final class PreviewStoryRepository: BaseStoryRepository {}
 
 extension PreviewStoryRepository: StoryRepository {
 
 	func addStory(_ story: Story) {}
 
-	func getStories(storiesPerRequest: Int) {
-		stories = [Story.demoStory]
+	func getStories() {
+		stories = Story.demoStories
 	}
 
 	func updateStory(_ story: Story) {}

@@ -21,8 +21,7 @@ protocol StoryRepository: BaseStoryRepository {
 	func addStory(_ story: Story)
 
 	/// Read bunch of stories from repository filtered by IDs.
-	/// - Parameter storiesPerRequest: Number of stories per request
-	func getStories(storiesPerRequest: Int)
+	func getStories()
 
 	/// Update a story in repository.
 	/// - Parameter story: A story to update.

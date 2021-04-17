@@ -18,8 +18,7 @@ struct YesNoGameApp: App {
 	init() {
 		FirebaseApp.configure()
 		database = Firestore.firestore()
-//		storyRepository = FirestoreStoryRepository(database: database)
-		storyRepository = PreviewStoryRepository()
+		storyRepository = FirestoreStoryRepository(database: database)
 	}
 
 	var body: some Scene {

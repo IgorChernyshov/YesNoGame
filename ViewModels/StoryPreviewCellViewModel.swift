@@ -11,7 +11,7 @@ import Foundation
 struct StoryPreviewCellViewModel: Identifiable {
 
 	// MARK: - View Model
-	var id: String = ""
+	var id: String { story.id ?? UUID().uuidString }
 	var title: String { story.preview.title }
 	var question: String { story.body.question }
 	var storyStats: Story.Stats { story.stats }

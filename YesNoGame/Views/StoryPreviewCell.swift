@@ -27,6 +27,6 @@ struct StoryPreviewCell: View {
 
 struct StoryPreviewCell_Previews: PreviewProvider {
 	static var previews: some View {
-		StoryPreviewCell(viewModel: StoryPreviewCellViewModel(story: Story.demoStory))
+		StoryPreviewCell(viewModel: StoryPreviewCellViewModel(story: Story.demoStories.first!))
 	}
 }

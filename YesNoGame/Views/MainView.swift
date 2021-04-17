@@ -14,6 +14,7 @@ struct MainView: View {
 
 	init(storiesListViewModel: StoriesListViewModel) {
 		self.storiesListViewModel = storiesListViewModel
+		self.storiesListViewModel.storiesRepository.getStories()
 	}
 
 	var body: some View {

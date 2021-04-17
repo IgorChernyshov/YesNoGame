@@ -27,6 +27,6 @@ struct StoryStatsStack: View {
 
 struct StoryStatsStack_Previews: PreviewProvider {
     static var previews: some View {
-		StoryStatsStack(storyStats: Story.demoStory.stats)
+		StoryStatsStack(storyStats: Story.demoStories.first!.stats)
     }
 }

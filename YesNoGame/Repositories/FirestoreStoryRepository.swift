@@ -23,7 +23,6 @@ final class FirestoreStoryRepository: BaseStoryRepository {
 	init(database: Firestore) {
 		self.database = database
 		super.init()
-		self.getStories(storiesPerRequest: 10)
 	}
 }
 
@@ -38,10 +37,9 @@ extension FirestoreStoryRepository: StoryRepository {
 		}
 	}
 
-	func getStories(storiesPerRequest: Int) {
+	func getStories() {
 		let storiesQuery = database.collection(storiesPath)
 			.order(by: "id")
-			.limit(to: storiesPerRequest)
 		storiesQuery.getDocuments { querySnapshot, error in
 			if let querySnapshot = querySnapshot {
 				self.stories = querySnapshot.documents.compactMap { document -> Story? in

@@ -24,7 +24,7 @@ final class WebScrapService {
 
 	func getStoryData(storyNumber: String, completion: @escaping (Story?) -> ()) {
 		guard !isDemoMode else {
-			completion(Story.demoStory)
+			completion(Story.demoStories.first)
 			return
 		}
 

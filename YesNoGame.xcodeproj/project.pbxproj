@@ -128,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				D6ECC6B026183AAF005E08CC /* YesNoGame */,
-				D6DF3DA12623189E00E7A7F5 /* ViewModels */,
 				D6ECC6AF26183AAF005E08CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,6 +150,7 @@
 				D6DF3D962622023200E7A7F5 /* Repositories */,
 				D6DF3D7226216B8E00E7A7F5 /* Resources */,
 				D6ECC6C626183E0F005E08CC /* Services */,
+				D6DF3DA12623189E00E7A7F5 /* ViewModels */,
 				D6A8C77D261879FC00C6089C /* Views */,
 			);
 			path = YesNoGame;
